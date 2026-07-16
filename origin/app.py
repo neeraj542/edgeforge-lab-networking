@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-origin/app.py — Customer Origin Server (EdgeForge lab)
+origin/app.py — Customer Origin Server (ns-cdn-lab lab)
 ======================================================
 In a CDN model, the "origin" is the customer's backend. The edge fetches content
 from origin on a cache MISS, then serves later requests from edge cache until TTL

@@ -1,14 +1,14 @@
-# Extending EdgeForge
+# Extending ns-cdn-lab
 
 ## Point the edge at your own app
 
-See the worked example: [examples/custom-origin](../examples/custom-origin/).
+For no-code-change recipes, start with [Examples](examples.md). For manual wiring, see [examples/custom-origin](../examples/custom-origin/).
 
 High-level steps:
 
-1. Run your app on the Docker network (or `host.docker.internal` on Docker Desktop).
-2. Change `upstream origin_backend` in `nginx/nginx.conf`.
-3. `make reload` (or `make up` if you changed compose).
+1. Use [examples/byo-origin](../examples/byo-origin/) if your app already runs on your host.
+2. Use [examples/custom-origin](../examples/custom-origin/) if your app is Dockerized.
+3. Change `nginx/nginx.conf` only when you need custom routing or multiple upstreams.
 
 ## Common expert extensions
 

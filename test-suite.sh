@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # =============================================================================
-# test-suite.sh — EdgeForge CDN / Edge Security Verification Suite
+# test-suite.sh — ns-cdn-lab CDN / Edge Security Verification Suite
 # =============================================================================
 # Validates:
 #   1. HTTP → HTTPS 301 redirect
@@ -19,7 +19,7 @@
 
 set -euo pipefail
 
-DOMAIN="edgeforge.local"
+DOMAIN="ns-cdn-lab.local"
 EDGE_HTTPS="https://${DOMAIN}"
 EDGE_HTTP="http://${DOMAIN}"
 CURL_RESOLVE=(--resolve "${DOMAIN}:443:127.0.0.1" --resolve "${DOMAIN}:80:127.0.0.1")
@@ -211,7 +211,7 @@ test_security_blocks() {
 main() {
     echo ""
     echo "╔══════════════════════════════════════════════════════════════╗"
-    echo "║   EdgeForge — CDN & Edge Security Verification Suite        ║"
+    echo "║   ns-cdn-lab — CDN & Edge Security Verification Suite        ║"
     echo "╚══════════════════════════════════════════════════════════════╝"
 
     wait_for_edge
@@ -228,7 +228,7 @@ main() {
     echo ""
 
     if [[ "$FAIL" -eq 0 ]]; then
-        echo -e "${GREEN}All tests passed. EdgeForge is ready for demo.${NC}"
+        echo -e "${GREEN}All tests passed. ns-cdn-lab is ready for demo.${NC}"
         exit 0
     else
         echo -e "${RED}Some tests failed. Review nginx.conf and docker compose logs.${NC}"

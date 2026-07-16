@@ -1,6 +1,6 @@
 # Security
 
-EdgeForge includes a **lab-scale** edge security layer — enough to teach
+ns-cdn-lab includes a **lab-scale** edge security layer — enough to teach
 patterns, not enough to replace a commercial WAF.
 
 ## Controls
@@ -19,12 +19,12 @@ patterns, not enough to replace a commercial WAF.
 ```bash
 # Method block
 curl -sk -o /dev/null -w "%{http_code}\n" -X DELETE \
-  --resolve edgeforge.local:443:127.0.0.1 https://edgeforge.local/
+  --resolve ns-cdn-lab.local:443:127.0.0.1 https://ns-cdn-lab.local/
 
 # Bot UA block
 curl -sk -o /dev/null -w "%{http_code}\n" \
   -H "User-Agent: Nikto/2.1.6" \
-  --resolve edgeforge.local:443:127.0.0.1 https://edgeforge.local/
+  --resolve ns-cdn-lab.local:443:127.0.0.1 https://ns-cdn-lab.local/
 ```
 
 ## Design notes for contributors

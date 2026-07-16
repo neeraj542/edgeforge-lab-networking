@@ -30,20 +30,20 @@ docker compose up --build -d --remove-orphans
 ```text
 Passed: 10
 Failed: 0
-All tests passed. EdgeForge is ready for demo.
+All tests passed. ns-cdn-lab is ready for demo.
 ```
 
 ## First manual request
 
 ```bash
-curl -Ik --resolve edgeforge.local:443:127.0.0.1 https://edgeforge.local/
+curl -Ik --resolve ns-cdn-lab.local:443:127.0.0.1 https://ns-cdn-lab.local/
 ```
 
 Look for:
 
 - `x-cache-status: MISS` (or `HIT` on a second request)
 - `x-origin-server: Flask-Backend-01`
-- `x-served-by: EdgeForge`
+- `x-served-by: ns-cdn-lab`
 - `strict-transport-security: ...`
 
 ## Stop

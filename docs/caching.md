@@ -1,6 +1,6 @@
 # Caching
 
-EdgeForge uses Nginx `proxy_cache` to simulate a CDN edge cache.
+ns-cdn-lab uses Nginx `proxy_cache` to simulate a CDN edge cache.
 
 ## Key settings (`nginx/nginx.conf`)
 
@@ -18,14 +18,14 @@ Primary header: **`X-Cache-Status`**
 
 ```bash
 # First request — expect MISS
-curl -sk -D - -o /dev/null --resolve edgeforge.local:443:127.0.0.1 \
-  "https://edgeforge.local/?demo=$(date +%s)" | grep -i x-cache
+curl -sk -D - -o /dev/null --resolve ns-cdn-lab.local:443:127.0.0.1 \
+  "https://ns-cdn-lab.local/?demo=$(date +%s)" | grep -i x-cache
 
 # Immediate repeat of a fixed URL — expect HIT
-curl -sk -D - -o /dev/null --resolve edgeforge.local:443:127.0.0.1 \
-  "https://edgeforge.local/?demo=fixed" | grep -i x-cache
-curl -sk -D - -o /dev/null --resolve edgeforge.local:443:127.0.0.1 \
-  "https://edgeforge.local/?demo=fixed" | grep -i x-cache
+curl -sk -D - -o /dev/null --resolve ns-cdn-lab.local:443:127.0.0.1 \
+  "https://ns-cdn-lab.local/?demo=fixed" | grep -i x-cache
+curl -sk -D - -o /dev/null --resolve ns-cdn-lab.local:443:127.0.0.1 \
+  "https://ns-cdn-lab.local/?demo=fixed" | grep -i x-cache
 ```
 
 ## Stale serving
@@ -35,7 +35,7 @@ That trades freshness for availability — a common CDN support trade-off.
 
 ## Personal-project tip
 
-Before you pay for a CDN, use EdgeForge to validate:
+Before you pay for a CDN, use ns-cdn-lab to validate:
 
 - Which URLs should be cacheable
 - What `Cache-Control` your app actually sends

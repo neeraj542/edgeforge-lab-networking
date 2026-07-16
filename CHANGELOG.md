@@ -1,20 +1,26 @@
 # Changelog
 
-All notable changes to EdgeForge are documented here.
+All notable changes to ns-cdn-lab are documented here.
 
 Format inspired by [Keep a Changelog](https://keepachangelog.com/).
 This project uses [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-07-22
+
+### Changed
+
+- Rebranded product name from EdgeForge to **ns-cdn-lab**
+- Local demo domain is now `ns-cdn-lab.local`
+- Safer cert generation: reuse existing lab certs unless `FORCE=1`
+- Compose bring-up uses `--force-recreate` for more reliable host TLS after switches
+
 ### Added
 
-- Open-source Phase 1 packaging: Apache-2.0 license, NOTICE, security policy,
-  contributing guide, code of conduct
-- Makefile shortcuts (`up`, `down`, `test`, `certs`, `logs`, `reload`)
-- Documentation skeleton under `docs/`
-- GitHub Actions CI to run the verification suite
-- Custom-origin example under `examples/custom-origin/`
+- Phase 2 examples: static-site origin, cache-aware API origin, and BYO-origin forwarder
+- Makefile shortcuts for `example-static`, `example-api`, and `example-byo`
+- Docs for examples plus troubleshooting notes for cert reuse / TLS flakes
 
 ## [0.1.0] - 2026-07-16
 

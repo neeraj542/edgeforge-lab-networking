@@ -1,6 +1,6 @@
 # Example: custom origin
 
-Run **your** app behind EdgeForge instead of the bundled Flask demo.
+Run **your** app behind ns-cdn-lab instead of the bundled Flask demo.
 
 ## Option A — App in Docker on `cdn-network`
 
@@ -55,7 +55,7 @@ Ensure your app listens on `0.0.0.0`, not only `127.0.0.1`.
 ## Verify
 
 ```bash
-curl -Ik --resolve edgeforge.local:443:127.0.0.1 https://edgeforge.local/
+curl -Ik --resolve ns-cdn-lab.local:443:127.0.0.1 https://ns-cdn-lab.local/
 make test   # some origin-header assertions are Flask-specific; adjust as needed
 ```
 

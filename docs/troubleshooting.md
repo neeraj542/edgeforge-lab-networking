@@ -46,6 +46,26 @@ Expected under bursty curls from one IP. Wait a few seconds, or raise
 Lab certs are self-signed. For curl demos use `-k`. For browsers, import
 `nginx/certs/edge.crt` as a trusted cert or use curl/`--resolve` for verification.
 
+## Host HTTPS resets after switching examples / restarting edge
+
+Symptom: Docker shows `edge-proxy` healthy, but host `curl https://ns-cdn-lab.local`
+fails with `curl: (35) Connection reset by peer`. Inside the container,
+`wget https://localhost/edge-health` still works.
+
+Cause (Docker Desktop): stopping/starting `edge-proxy` without recreate can leave
+the published `127.0.0.1:443` proxy in a broken TLS state.
+
+Fix:
+
+```bash
+docker compose up -d --force-recreate edge-proxy
+# or use Make targets which now pass --force-recreate
+make up
+```
+
+Also avoid regenerating TLS files under a live edge. Everyday `make certs` reuses
+existing files; use `make certs-force` only when you intentionally want new certs.
+
 ## Origin healthy but edge returns 502
 
 ```bash

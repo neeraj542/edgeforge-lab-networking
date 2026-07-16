@@ -1,4 +1,4 @@
-# Origin Server Container — customer backend for EdgeForge
+# Origin Server Container — customer backend for ns-cdn-lab
 # Not exposed to the host; all traffic must traverse the edge proxy.
 FROM python:3.12-slim
 
@@ -13,11 +13,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-RUN addgroup --system edgeforge && \
-    adduser --system --ingroup edgeforge --home /app edgeforge && \
-    chown -R edgeforge:edgeforge /app
+RUN addgroup --system nscdnlab && \
+    adduser --system --ingroup nscdnlab --home /app nscdnlab && \
+    chown -R nscdnlab:nscdnlab /app
 
-USER edgeforge
+USER nscdnlab
 
 EXPOSE 5000
 

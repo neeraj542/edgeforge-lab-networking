@@ -7,9 +7,9 @@
 | `main` / latest release | Yes |
 | Older tags | Best-effort only |
 
-## What EdgeForge is (and is not)
+## What ns-cdn-lab is (and is not)
 
-EdgeForge is a **local learning / lab stack**. It uses self-signed certificates,
+ns-cdn-lab is a **local learning / lab stack**. It uses self-signed certificates,
 simple WAF-style rules, and Docker networking for demos. It is **not** a
 production CDN, WAF, or DDoS product.
 
@@ -32,5 +32,5 @@ We aim to acknowledge reports within **7 days**.
 ## Safe disclosure expectations
 
 - Give us a reasonable window before public disclosure.
-- Do not use EdgeForge findings to attack third-party systems.
+- Do not use ns-cdn-lab findings to attack third-party systems.
 - Lab-only findings (e.g. “self-signed cert is insecure by design”) are out of scope.

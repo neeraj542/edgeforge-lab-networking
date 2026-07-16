@@ -4,7 +4,7 @@ Generated files live here after `make certs` or `./nginx/generate-certs.sh`:
 
 | File | Purpose |
 |------|---------|
-| `edge.crt` | Public certificate for `edgeforge.local` |
+| `edge.crt` | Public certificate for `ns-cdn-lab.local` |
 | `edge.key` | Private key (**gitignored — never commit**) |
 | `openssl.cnf` | OpenSSL config used for generation |
 

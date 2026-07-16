@@ -1,5 +1,5 @@
 # =============================================================================
-# docker-compose.yml — EdgeForge CDN & Edge Security Lab
+# docker-compose.yml — ns-cdn-lab CDN & Edge Security Lab
 # =============================================================================
 # Architecture:
 #
@@ -14,7 +14,7 @@
 #   3. ./test-suite.sh
 # =============================================================================
 
-name: edgeforge
+name: ns-cdn-lab
 
 services:
   # ---------------------------------------------------------------------------
@@ -52,7 +52,7 @@ services:
   # ---------------------------------------------------------------------------
   edge-proxy:
     image: nginx:1.27-alpine
-    hostname: edgeforge.local
+    hostname: ns-cdn-lab.local
     restart: unless-stopped
     init: true
     command: >
@@ -78,7 +78,6 @@ services:
       - FOWNER
     tmpfs:
       - /var/run
-      - /var/log/nginx
     depends_on:
       origin-server:
         condition: service_healthy

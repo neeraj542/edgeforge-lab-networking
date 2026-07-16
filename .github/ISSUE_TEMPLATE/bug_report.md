@@ -10,7 +10,7 @@ A clear description of what went wrong.
 **Environment**
 - OS:
 - Docker / Compose versions:
-- EdgeForge commit / tag:
+- ns-cdn-lab commit / tag:
 
 **Steps to reproduce**
 1.

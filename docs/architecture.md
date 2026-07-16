@@ -40,7 +40,7 @@
 
 ## Request lifecycle (happy path)
 
-1. Client hits `http://edgeforge.local/` → **301** to HTTPS
+1. Client hits `http://ns-cdn-lab.local/` → **301** to HTTPS
 2. TLS 1.3 handshake at edge
 3. Security gates (UA, method, rate limit)
 4. Cache lookup → `MISS` → proxy to origin

@@ -1,6 +1,6 @@
 # Roadmap
 
-## v0.1 — Open-source foundation (current)
+## v0.1 — Open-source foundation
 
 - [x] Working edge + origin lab with automated tests
 - [x] Apache-2.0 license + community files
@@ -8,11 +8,11 @@
 - [x] Makefile + GitHub Actions CI
 - [x] Custom-origin example stub
 
-## v0.2 — Personal-project recipes
+## v0.2 — Personal-project recipes (current)
 
-- [ ] Static-site example (long-lived asset cache)
-- [ ] API example (cache GET, bypass POST)
-- [ ] Optional `docker-compose` profile for “bring your own origin”
+- [x] Static-site example (long-lived asset cache)
+- [x] API example (cache GET, bypass POST)
+- [x] Optional `docker-compose` profile for “bring your own origin”
 - [ ] Short demo recording / asciinema in README
 
 ## v0.3 — Operator quality

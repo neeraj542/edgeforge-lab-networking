@@ -32,4 +32,4 @@ htmlcov/
 .pytest_cache/
 
 # Local overrides
-docker-compose.override.yml
+/docker-compose.override.yml

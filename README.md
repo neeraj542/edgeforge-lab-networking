@@ -1,15 +1,17 @@
-# EdgeForge
+# ns-cdn-lab
+
+ns-cdn-lab is a local CDN-style edge lab. It uses Nginx as an edge proxy in front of a hidden Flask origin. The edge terminates TLS 1.3, redirects HTTP to HTTPS, caches origin responses using Nginx proxy cache, exposes cache status via headers, and applies basic edge security like method filtering, scanner User-Agent blocking, rate limiting, and security headers. The origin is cloaked because it is only reachable inside the Docker network.
 
 **Local CDN-style edge lab** — TLS 1.3, response caching, origin cloaking, and basic edge security — so you can learn and test delivery patterns on personal projects in minutes.
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![CI](https://github.com/neeraj542/edgeforge-lab-networking/actions/workflows/ci.yml/badge.svg)](https://github.com/neeraj542/edgeforge-lab-networking/actions/workflows/ci.yml)
 
-> **Not a production CDN.** EdgeForge is an educational Docker stack. See [docs/production-notes.md](docs/production-notes.md).
+> **Not a production CDN.** ns-cdn-lab is an educational Docker stack. See [docs/production-notes.md](docs/production-notes.md).
 
 ## Why it helps
 
-| You want to… | EdgeForge gives you… |
+| You want to… | ns-cdn-lab gives you… |
 |--------------|----------------------|
 | Understand HIT vs MISS | `X-Cache-Status` on every proxied response |
 | Demo HTTPS locally | TLS 1.3 edge with self-signed lab certs |
@@ -33,7 +35,7 @@ Expected: **10 passed / 0 failed**.
 ### Manual peek
 
 ```bash
-curl -Ik --resolve edgeforge.local:443:127.0.0.1 https://edgeforge.local/
+curl -Ik --resolve ns-cdn-lab.local:443:127.0.0.1 https://ns-cdn-lab.local/
 ```
 
 ## Architecture
@@ -56,7 +58,7 @@ curl -Ik --resolve edgeforge.local:443:127.0.0.1 https://edgeforge.local/
 |-------|-------|
 | Beginner | [Getting Started](docs/getting-started.md) · [Concepts](docs/concepts.md) |
 | Intermediate | [Architecture](docs/architecture.md) · [Caching](docs/caching.md) · [Security](docs/security.md) |
-| Apply it | [Use Cases](docs/use-cases.md) · [Custom origin example](examples/custom-origin/) |
+| Apply it | [Use Cases](docs/use-cases.md) · [Examples](docs/examples.md) |
 | Expert | [Extending](docs/extending.md) · [Production notes](docs/production-notes.md) |
 | Stuck? | [Troubleshooting](docs/troubleshooting.md) |
 
@@ -72,6 +74,9 @@ Full index: [docs/README.md](docs/README.md)
 | `make reload` | Reload Nginx after config edits |
 | `make down` | Stop containers |
 | `make clean` | Stop and wipe cache volume |
+| `make example-static` | Run the static-site cache example |
+| `make example-api` | Run the cache-aware API example |
+| `make example-byo` | Run against a host app |
 
 ## License
 

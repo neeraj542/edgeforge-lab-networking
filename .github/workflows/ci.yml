@@ -8,7 +8,7 @@ on:
 
 jobs:
   verify:
-    name: Build and verify EdgeForge
+    name: Build and verify ns-cdn-lab
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
@@ -30,7 +30,7 @@ jobs:
       - name: Wait for edge health
         run: |
           for i in $(seq 1 30); do
-            if curl -sk --resolve edgeforge.local:443:127.0.0.1 https://edgeforge.local/edge-health | grep -q edge-ok; then
+            if curl -sk --resolve ns-cdn-lab.local:443:127.0.0.1 https://ns-cdn-lab.local/edge-health | grep -q edge-ok; then
               echo "Edge ready"
               exit 0
             fi

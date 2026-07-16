@@ -1,6 +1,6 @@
-# Contributing to EdgeForge
+# Contributing to ns-cdn-lab
 
-Thanks for helping improve EdgeForge. This project is a local CDN / edge lab —
+Thanks for helping improve ns-cdn-lab. This project is a local CDN / edge lab —
 contributions that keep the **5-minute quick start** simple are especially welcome.
 
 ## Code of Conduct

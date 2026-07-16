@@ -2,7 +2,7 @@
 
 ## Edge vs origin
 
-| Term | In EdgeForge | Meaning |
+| Term | In ns-cdn-lab | Meaning |
 |------|--------------|---------|
 | **Edge** | `edge-proxy` (Nginx) | First hop for the client. Terminates TLS, caches, applies security. |
 | **Origin** | `origin-server` (Flask) | Your app / content source. Hidden from the public host network. |

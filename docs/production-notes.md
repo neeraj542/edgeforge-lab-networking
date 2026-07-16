@@ -1,6 +1,6 @@
 # Production Notes
 
-## What EdgeForge is
+## What ns-cdn-lab is
 
 A **local, educational Docker lab** that demonstrates CDN-style edge behavior:
 
@@ -9,7 +9,7 @@ A **local, educational Docker lab** that demonstrates CDN-style edge behavior:
 - Origin isolation
 - Basic request filtering and rate limiting
 
-## What EdgeForge is not
+## What ns-cdn-lab is not
 
 | Not this | Use this instead (examples) |
 |----------|-----------------------------|
@@ -28,7 +28,7 @@ A **local, educational Docker lab** that demonstrates CDN-style edge behavior:
 
 ## Honest positioning for README / talks
 
-> EdgeForge helps you **learn and validate** edge delivery locally. It is a
+> ns-cdn-lab helps you **learn and validate** edge delivery locally. It is a
 > springboard to production CDNs — not a replacement for them.
 
 Next: [Use Cases](use-cases.md) · [Getting Started](getting-started.md)

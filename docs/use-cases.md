@@ -1,6 +1,6 @@
 # Use Cases — how personal projects benefit
 
-EdgeForge is useful when you want CDN-like behavior **locally** before (or instead of)
+ns-cdn-lab is useful when you want CDN-like behavior **locally** before (or instead of)
 wiring a commercial edge.
 
 ## 1. Learn delivery debugging
@@ -24,12 +24,12 @@ Put your Flask/FastAPI/Node app **behind** Nginx:
 - Rate limiting and method filtering at the edge
 - Cached GETs for marketing pages / static JSON
 
-See [examples/custom-origin](../examples/custom-origin/).
+Start with [Examples](examples.md): static-site, API, BYO-origin, and custom-origin recipes.
 
 ## 4. Test cache headers before production CDN
 
 Many “CDN isn’t caching” tickets are actually origin misconfiguration.
-Reproduce with EdgeForge, fix `Cache-Control`, then apply the same policy on
+Reproduce with ns-cdn-lab, fix `Cache-Control`, then apply the same policy on
 Cloudflare / CloudFront / Fastly.
 
 ## 5. Abuse / scanner demos (safely)
@@ -47,4 +47,4 @@ Ship a public repo that proves you understand:
 - Edge vs origin isolation
 - Basic WAF-style controls
 
-Next: [Extending](extending.md)
+Next: [Examples](examples.md) · [Extending](extending.md)

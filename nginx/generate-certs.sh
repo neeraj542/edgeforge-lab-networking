@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # =============================================================================
-# generate-certs.sh — Self-Signed TLS Certificate Generator (EdgeForge)
+# generate-certs.sh — Self-Signed TLS Certificate Generator (ns-cdn-lab)
 # =============================================================================
 # Project context:
-#   EdgeForge terminates TLS at the edge proxy (the first hop a client hits).
-#   This script creates a local cert for the mock domain 'edgeforge.local' so
+#   ns-cdn-lab terminates TLS at the edge proxy (the first hop a client hits).
+#   This script creates a local cert for the mock domain 'ns-cdn-lab.local' so
 #   we can demo HTTPS delivery, TLS 1.3 handshakes, and HSTS without a public CA.
 #
 # Cryptographic standards:
@@ -16,16 +16,29 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CERT_DIR="${SCRIPT_DIR}/certs"
-DOMAIN="edgeforge.local"
+DOMAIN="ns-cdn-lab.local"
 VALIDITY_DAYS=365
+FORCE="${FORCE:-0}"
 
 echo "=============================================="
-echo " EdgeForge TLS Certificate Generator"
+echo " ns-cdn-lab TLS Certificate Generator"
 echo " Domain: ${DOMAIN}"
 echo " Output: ${CERT_DIR}"
 echo "=============================================="
 
 mkdir -p "${CERT_DIR}"
+
+# Skip regeneration by default.
+# WHY: remounting a new edge.key under a running Nginx process breaks host TLS
+# (handshake reset) until the edge container is recreated. Everyday make targets
+# should reuse existing lab certs.
+if [[ "${FORCE}" != "1" && -f "${CERT_DIR}/edge.crt" && -f "${CERT_DIR}/edge.key" ]]; then
+    echo "[skip] Existing certs found. Reusing:"
+    echo "  ${CERT_DIR}/edge.crt"
+    echo "  ${CERT_DIR}/edge.key"
+    echo "Force regenerate with: FORCE=1 ./nginx/generate-certs.sh"
+    exit 0
+fi
 
 # -----------------------------------------------------------------------------
 # Step 1: Generate ECDSA Private Key (P-256 / prime256v1)
@@ -54,7 +67,7 @@ req_extensions     = v3_req
 C  = IN
 ST = Lab
 L  = Local
-O  = EdgeForge
+O  = ns-cdn-lab
 OU = Edge Security Lab
 CN = ${DOMAIN}
 

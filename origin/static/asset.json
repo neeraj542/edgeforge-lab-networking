@@ -1,8 +1,8 @@
 {
   "asset_type": "static_placeholder",
-  "description": "Mock static asset served from customer origin — cached at the EdgeForge edge per Cache-Control",
+  "description": "Mock static asset served from customer origin — cached at the ns-cdn-lab edge per Cache-Control",
   "origin_server": "Flask-Backend-01",
   "cache_directive": "public, max-age=60",
-  "cdn_simulation": "edgeforge.local",
+  "cdn_simulation": "ns-cdn-lab.local",
   "timestamp_note": "Edge TTL mirrors origin max-age=60 seconds"
 }
