@@ -1,0 +1,5 @@
+services:
+  origin-server:
+    build:
+      context: ./examples/api/origin
+      dockerfile: Dockerfile
