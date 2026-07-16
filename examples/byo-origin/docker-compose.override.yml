@@ -1,0 +1,9 @@
+services:
+  origin-server:
+    build:
+      context: ./examples/byo-origin
+      dockerfile: Dockerfile
+    environment:
+      # Change this when your local app listens on a different host/port.
+      UPSTREAM_HOST: ${NS_CDN_LAB_UPSTREAM_HOST:-host.docker.internal}
+      UPSTREAM_PORT: ${NS_CDN_LAB_UPSTREAM_PORT:-3000}
