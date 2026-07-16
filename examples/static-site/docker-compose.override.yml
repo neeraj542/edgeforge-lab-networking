@@ -1,0 +1,5 @@
+services:
+  origin-server:
+    build:
+      context: ./examples/static-site/origin
+      dockerfile: Dockerfile

@@ -1,0 +1,7 @@
+{
+  "example": "static-site",
+  "origin": "Static-Origin-01",
+  "html_ttl_seconds": 30,
+  "asset_ttl_seconds": 600,
+  "purpose": "show how ns-cdn-lab caches static pages and assets with different Cache-Control values"
+}
