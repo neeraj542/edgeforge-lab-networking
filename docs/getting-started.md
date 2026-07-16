@@ -9,8 +9,8 @@
 ## Install & run
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/edgeforge.git
-cd edgeforge
+git clone https://github.com/neeraj542/edgeforge-lab-networking.git
+cd edgeforge-lab-networking
 
 make up      # generates certs + builds + starts
 make test    # should print 10 passed

@@ -20,8 +20,8 @@ Please read and follow [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 Prerequisites: Docker Desktop (or Docker Engine + Compose v2), `curl`, `openssl`.
 
 ```bash
-git clone <your-fork-url>
-cd edgeforge   # or deployment-agent locally
+git clone https://github.com/neeraj542/edgeforge-lab-networking.git
+cd edgeforge-lab-networking
 make certs
 make up
 make test

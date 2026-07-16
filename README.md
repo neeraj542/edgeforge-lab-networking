@@ -3,7 +3,7 @@
 **Local CDN-style edge lab** — TLS 1.3, response caching, origin cloaking, and basic edge security — so you can learn and test delivery patterns on personal projects in minutes.
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
-[![CI](https://img.shields.io/badge/CI-GitHub_Actions-2088FF.svg)](.github/workflows/ci.yml)
+[![CI](https://github.com/neeraj542/edgeforge-lab-networking/actions/workflows/ci.yml/badge.svg)](https://github.com/neeraj542/edgeforge-lab-networking/actions/workflows/ci.yml)
 
 > **Not a production CDN.** EdgeForge is an educational Docker stack. See [docs/production-notes.md](docs/production-notes.md).
 
@@ -22,8 +22,8 @@
 **Requirements:** Docker + Compose v2, free ports 80/443, `curl`, `openssl`.
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/edgeforge.git
-cd edgeforge
+git clone https://github.com/neeraj542/edgeforge-lab-networking.git
+cd edgeforge-lab-networking
 make up
 make test
 ```
