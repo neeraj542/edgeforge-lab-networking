@@ -1,0 +1,35 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# TLS material (regenerate with make certs; never commit private keys)
+nginx/certs/edge.key
+nginx/certs/edge.crt
+nginx/certs/openssl.cnf
+nginx/certs/*.pem
+
+# Runtime / Docker leftovers
+*.log
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Local overrides
+docker-compose.override.yml

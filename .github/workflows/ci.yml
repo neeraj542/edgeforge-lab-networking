@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  verify:
+    name: Build and verify EdgeForge
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Compose
+        run: docker compose version
+
+      - name: Generate TLS certificates
+        run: |
+          chmod +x nginx/generate-certs.sh test-suite.sh
+          ./nginx/generate-certs.sh
+
+      - name: Start stack
+        run: docker compose up --build -d --remove-orphans
+
+      - name: Wait for edge health
+        run: |
+          for i in $(seq 1 30); do
+            if curl -sk --resolve edgeforge.local:443:127.0.0.1 https://edgeforge.local/edge-health | grep -q edge-ok; then
+              echo "Edge ready"
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "Edge did not become ready"
+          docker compose ps
+          docker compose logs
+          exit 1
+
+      - name: Run verification suite
+        run: ./test-suite.sh
+
+      - name: Dump logs on failure
+        if: failure()
+        run: docker compose logs
+
+      - name: Tear down
+        if: always()
+        run: docker compose down -v --remove-orphans
