@@ -52,4 +52,4 @@ x-cache-status: BYPASS
 docker compose -f docker-compose.yml -f examples/api/docker-compose.override.yml down --remove-orphans
 ```
 
-Back to [use cases](../../docs/use-cases.md).
+Back to [Examples](../../docs/examples.md) · [Guide](../../docs/guide.md).

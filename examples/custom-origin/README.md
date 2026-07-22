@@ -59,4 +59,4 @@ curl -Ik --resolve ns-cdn-lab.local:443:127.0.0.1 https://ns-cdn-lab.local/
 make test   # some origin-header assertions are Flask-specific; adjust as needed
 ```
 
-Back to [Extending docs](../../docs/extending.md).
+Back to [Examples](../../docs/examples.md) · [Guide](../../docs/guide.md).

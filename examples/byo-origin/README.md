@@ -49,4 +49,4 @@ projects are not cached accidentally.
 docker compose -f docker-compose.yml -f examples/byo-origin/docker-compose.override.yml down --remove-orphans
 ```
 
-Back to [Extending](../../docs/extending.md).
+Back to [Examples](../../docs/examples.md) · [Guide](../../docs/guide.md).

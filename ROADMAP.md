@@ -4,7 +4,7 @@
 
 - [x] Working edge + origin lab with automated tests
 - [x] Apache-2.0 license + community files
-- [x] Beginner → expert docs skeleton
+- [x] Minimal docs (guide + examples + troubleshooting)
 - [x] Makefile + GitHub Actions CI
 - [x] Custom-origin example stub
 

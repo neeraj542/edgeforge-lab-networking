@@ -33,4 +33,4 @@ curl -sk -D - -o /dev/null --resolve ns-cdn-lab.local:443:127.0.0.1 https://ns-c
 docker compose -f docker-compose.yml -f examples/static-site/docker-compose.override.yml down --remove-orphans
 ```
 
-Back to [use cases](../../docs/use-cases.md).
+Back to [Examples](../../docs/examples.md) · [Guide](../../docs/guide.md).
