@@ -15,6 +15,7 @@ personal projects without a commercial CDN.
 | [Security](security.md) | Intermediate | Methods, bots, rate limits, headers |
 | [Use Cases](use-cases.md) | All | Apply ns-cdn-lab to personal projects |
 | [Examples](examples.md) | All | Run static-site, API, and BYO-origin recipes |
+| [For experts](for-experts.md) | Expert | CDN/edge concept map & research keywords |
 | [Extending](extending.md) | Expert | Point at your app, add features |
 | [Troubleshooting](troubleshooting.md) | All | Fix port conflicts, certs, test failures |
 | [Production Notes](production-notes.md) | Expert | Know what this is *not* |

@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+title: "ns-cdn-lab"
+message: "If you use this lab in teaching, research, or training, please cite it."
+type: software
+authors:
+  - family-names: "Meena"
+    given-names: "Neeraj"
+    alias: "neeraj542"
+repository-code: "https://github.com/neeraj542/edgeforge-lab-networking"
+url: "https://github.com/neeraj542/edgeforge-lab-networking"
+abstract: >-
+  Local CDN-style edge lab using Nginx as a reverse proxy in front of a hidden
+  Flask origin. Demonstrates TLS 1.3 termination, Nginx proxy_cache HIT/MISS
+  behavior, origin cloaking, and basic edge security controls for learning and
+  interview demos.
+keywords:
+  - CDN
+  - Nginx
+  - reverse proxy
+  - proxy_cache
+  - HTTP caching
+  - TLS 1.3
+  - origin cloaking
+  - Docker Compose
+  - edge security
+  - Cache-Control
+license: Apache-2.0
+version: "0.2.0"
+date-released: "2026-07-22"
